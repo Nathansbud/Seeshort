@@ -1,0 +1,15 @@
+{
+    "name": "Seeshort",
+    "version": "0.1",
+    "description":"A quick way to view Seesaw shortcuts!",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": ["icons.js"],
+        "persistent": false
+    },
+    "permissions": ["activeTab", "input"],
+    "manifest_version": 2
+
+}

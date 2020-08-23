@@ -1,0 +1,29 @@
+body, html {
+    background: palegoldenrod;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+td > span {
+    cursor: pointer;
+}
+
+
+tr, td {
+    border: 1px solid white;
+    padding: 5px;
+}
+
+table td:has(img) {
+    max-width: 61px;
+    min-height: 61px!important;
+    max-height: 61px!important;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+
+}
+

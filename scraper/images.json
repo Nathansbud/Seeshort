@@ -1,7 +1,4 @@
-import requests
-import base64
-
-seesaw_icons = {
+{
     ":mic:":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA9BAMAAADsTHzaAAAAKlBMVEVHcEw1NTUzMzMyMjIzMzMzMzMvLy8zMzMvLy8zMzMzMzMyMjIyMjIzMzP/kanEAAAADnRSTlMAMIDA8P8gRxCQ1XBgo/Cv9B4AAAGESURBVHgBYsAGGJVdQ53VGHABdtNQEDDHIc0xNRQCZmCX7wqFgqgGrNqXhsLACkAfZQjTMBCF4X9A2CAsqahPDXizgK1YmMCw7UJoR1KBTw2+Ah8MCRYBegZfU49ZMu+9JtDL9b3+j04t+9Jv3929nsUPA3Yri3913G0N/VzwBfMDgV3O/FTyjPmR5K4gfqZ42ccFGsmT/uIflID4q/tWgoT+XAiYx85pQUlHowUFHY0SZP06pwU5bY0WLKhOC7ZUFwQ8H1NPvYDm6/yvOPYCms9x+8hoHgRvXJdVCIJLcF0KeMH4Aly3joDJrBUAXHcXXp8lAK6rgeMPkz/+/rjpNnEPo+7W1/HgT53Pa9ovpf3Spf5gPrmufW7X7n9FdepT05WgcAqzjq8VvhLMrR0pvOljPEu8joiruisM1t0TRiPtNQbr3jFYt6qYzwR/YXwi8A1jPHU4iwy+6/jewIgDXlrYDxzNFAlo6UpAM0WChIEUXJsoCLICGBLw0pUgH8SY/G//Ac7mECByBEbmAAAAAElFTkSuQmCC",
     ":label:":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA9BAMAAADsTHzaAAAAElBMVEVHcEwzMzMzMzMyMjIzMzMzMzOk8eTJAAAABXRSTlMAQIDBKrEQatUAAAA2SURBVDjLY2BgUMIJHBhAIBQnEBiVp4K8MRxARBF8SPgjALIubGBUflR+VH5UflR+aMpjKfUBv5fLmZKkNngAAAAASUVORK5CYII=",
     ":move:":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA9BAMAAADsTHzaAAAALVBMVEVHcEw1NTUzMzMyMjIvLy8zMzMzMzMzMzMzMzMzMzMvLy8yMjIzMzMyMjIyMjKbuTISAAAAD3RSTlMAMIBlEFCb//HVIMBATLA1wmI/AAABm0lEQVR4AWIAAkZlBwZUwKqKzEsHtFIHGnIDYQDHv71s09tcnAAtDnWwAKVIoSyoAg44gFU4gG33mn8iqxSaFyjRggM9gAWCpfYBos+wKH2NJje9nU53JoP2z4eZH+ZjV/hg8rjmiz4FkJseQqlPJ8DW8GPAcEvaj2xcGNscZGz8klV717MXraoub0QXs5C+U/JE3TRvxeIp7Ib8JyyGvPH7tcdX/+K1x/l/nv3pzyk3fUCxuQt+aI6xlGk/xZb5/3l93gWU531Tw0Og/7kjQO09gUJ7VKnX4r0/gKXovm6emi7fv13IQbG5ttVLGbeJyNlWjcUfk0nYTUBm9RqSR7C9hQuLR8CTaTcpzE0Peo+BXQPraTemH937+i+Pk73nFh/V5ezesfgJfPJ4MRt25k5X98sBHwH5jUjocKmAtXqHM4tfAUvltNpZ/PZL9YDTjwF2yj8D74GPlfYQ4J1ynfYRQDFzutQAc7enAG8mTn8FUD50eghA6vQIgMrp0qCz+aXHJx4PPD6uhl2uPH5r82vPN2qlPfa41A7/BXUa4QSWaj7LAAAAAElFTkSuQmCC",
@@ -37,12 +34,3 @@ seesaw_icons = {
     ":comment:":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA3BAMAAABN11+8AAAALVBMVEVHcEwvLy8zMzMvLy8zMzMyMjIyMjIzMzMzMzMzMzMyMjI1NTUyMjIzMzMzMzO1NFQ+AAAAD3RSTlMAIEAQgLDA/+CcWzBw8NAsv1FeAAABQUlEQVR4AWJABYxKDDgBs0pYORBUZK7GKi0DYJwuAVoLwzCOP/fiTmJ1jboICXfPuEecd8i3gjsUrOCuidX1irt7z3M98o5//R35tJFcXS/L+ZC8EjPSbxeQbzW+vk3SSrw5jmQJk4fDL0lep87tc6TUmIvDSDFxzL5OdOvgQFJJOEawRWo92ZfmUtXbmdHZi7W6hvEqZvS2WoB/xNQFRHIugGDi0iKE9WQYWS9GPOtVfvzJjzf/4fu8a1ifRhTrJgSxfoxwjvXs8SFq97//7ASmHcebPeABQ6reDVtG9vNQn6FBB/YCvbquP/86cKDotXAV8amydq4S5azXwqsTKYtkeBcp5TQfll5ywxp8C/XhslgJO09pTsMlGRpyjyGr0bEdav23sVhW9QSb/0K1LCufgfV+HeNb+kVwWcYkgEsGAG8KLdjAFJdHAAAAAElFTkSuQmCC"
 }
 
-
-# print(base64.decode(seesaw_icons[':comment:'], 'utf-8'))
-
-for shortcut, img in seesaw_icons.items():
-    print(shortcut, img)
-
-    img_data = requests.get(img).content if not img.startswith('data:') else base64.b64decode(img.split('png;base64,')[1])
-    with open(f"../icons/{shortcut.strip(':')}.png", 'wb') as img_file:
-        img_file.write(img_data)

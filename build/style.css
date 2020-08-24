@@ -5,14 +5,11 @@ body, html {
     margin: 0;
 }
 
-td > span {
-    cursor: pointer;
-}
-
 
 tr, td {
     border: 1px solid white;
     padding: 5px;
+    cursor: pointer;
 }
 
 table td:has(img) {

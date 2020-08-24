@@ -7,8 +7,11 @@ function emitShortcut(e) {
     e.cancelBubble = true
     e?.stopPropagation()
 
+
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-        chrome.tabs.sendMessage(tabs[0].id, {shortcut: e.target.dataset.shortcut}, (res) => {})
+        if(tabs[0].url.includes('https://app.seesaw.me')) {
+            chrome.tabs.sendMessage(tabs[0].id, {shortcut: e.target.dataset.shortcut}, (res) => {})
+        }
     })    
 }   
 

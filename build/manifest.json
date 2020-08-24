@@ -11,7 +11,7 @@
             "js": ["content.js"]
         }
     ],
-    "permissions": ["*://app.seesaw.me/*"],
+    "permissions": ["tabs", "*://app.seesaw.me/*"],
     "manifest_version": 2
 
 }
